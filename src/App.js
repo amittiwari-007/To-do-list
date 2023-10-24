@@ -1,24 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import FormHandler from './components/FormHandler';
+import Output from './components/Output';
+import { useState } from 'react';
 
 function App() {
+  const [list,setList]=useState(['Study','Bath','Puja','Lunch']);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <h1 className='name flex justify-center items-center'>TO DO LIST</h1>
+    <hr/>
+    <FormHandler setList={setList}/>
+    <Output list={list} setList={setList}/>
+    </>
   );
 }
 
